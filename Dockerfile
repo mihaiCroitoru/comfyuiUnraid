@@ -24,15 +24,15 @@ RUN pip install torchvision gitpython timm addict yapf insightface numba
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 COPY ./.zshrc /root/.zshrc
 
-# WORKDIR  /workspace/
+WORKDIR  /workspace/
 
-# RUN git clone https://github.com/comfyanonymous/ComfyUI.git /workspace/ComfyUI && cd ComfyUI
-# RUN git clone https://github.com/ltdrdata/ComfyUI-Manager.git /workspace/ComfyUI/custom_nodes/ComfyUI-Manager
+RUN git clone https://github.com/comfyanonymous/ComfyUI.git /workspace/ComfyUI && cd ComfyUI
+RUN git clone https://github.com/ltdrdata/ComfyUI-Manager.git /workspace/ComfyUI/custom_nodes/ComfyUI-Manager
 
 
-# WORKDIR /workspace
-# RUN cd /workspace/ComfyUI && pip install -r requirements.txt
-# RUN cd /workspace/ComfyUI/custom_nodes/ComfyUI-Manager && pip install -r requirements.txt
+WORKDIR /workspace
+RUN cd /workspace/ComfyUI && pip install -r requirements.txt
+RUN cd /workspace/ComfyUI/custom_nodes/ComfyUI-Manager && pip install -r requirements.txt
 
 # WORKDIR /workspace/ComfyUI/custom_nodes
 # COPY ./h264-discord.json /workspace/ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/video_formats/h264-discord.json
