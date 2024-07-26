@@ -16,13 +16,13 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=America/Chicago apt-get update && apt-get 
     && rm -rf /var/lib/apt/lists/*
 
 
-# RUN cd /root && npm install request chokidar form-data ws glob express axios @aws-sdk/client-s3 @aws-sdk/credential-providers dotenv bull
+RUN cd /root && npm install request chokidar form-data ws glob express axios @aws-sdk/client-s3 @aws-sdk/credential-providers dotenv bull
 
-# RUN pip install gradio opencv-python kornia loguru scikit-image onnx onnxruntime-gpu lpips ultralytics python_bidi arabic_reshaper 
-# RUN pip install torchvision gitpython timm addict yapf insightface numba
+RUN pip install gradio opencv-python kornia loguru scikit-image onnx onnxruntime-gpu lpips ultralytics python_bidi arabic_reshaper 
+RUN pip install torchvision gitpython timm addict yapf insightface numba
 
-# RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# COPY ./.zshrc /root/.zshrc
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+COPY ./.zshrc /root/.zshrc
 
 # WORKDIR  /workspace/
 
